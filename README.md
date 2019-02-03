@@ -18,3 +18,24 @@ TypeError: chosenHandler is not a function
     at endReadableNT (_stream_readable.js:1081:12)
     at process._tickCallback (internal/process/next_tick.js:63:19)
 ```
+
+## Usage
+Since this can be run for 2 environments (staging and production), here are the necessary commands for Windows (Powershell).
+For staging, and production:
+
+```javascript
+ $env:NODE_ENV = "staging"; node index.js
+```
+
+```javascript
+ $env:NODE_ENV = "production"; node index.js
+```
+On Linux, these should work without any issues:
+
+
+```javascript
+NODE_ENV = "staging" node index.js
+```
+
+```javascript
+NODE_ENV = "production" node index.js
