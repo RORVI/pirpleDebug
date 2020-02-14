@@ -65,7 +65,7 @@ var unifiedServer = function (req, res) {
         payload += decoder.end();
 
         //choose the handler for this endpoint. If a handler for it does not exist, use the notFound handler
-        var chosenHandler = typeof (router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
+        var chosenHandler = typeof (router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound();
 
         //construct the data object to send to the handler
         var data = {
